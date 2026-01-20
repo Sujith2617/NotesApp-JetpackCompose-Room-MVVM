@@ -1,7 +1,7 @@
-package com.example.notesapp
+package com.example.notesapp.data.room.repository
 
-import com.example.notesapp.room.Note
-import com.example.notesapp.room.NoteDao
+import com.example.notesapp.data.room.Note
+import com.example.notesapp.data.room.NoteDao
 import kotlinx.coroutines.flow.Flow
 
 class NoteRepository (private val noteDao: NoteDao){
@@ -11,7 +11,7 @@ class NoteRepository (private val noteDao: NoteDao){
         noteDao.upsertNote(note)
     }
 
-    fun getNotes(): Flow<List<Note>>{
+    fun getNotes(): Flow<List<Note>> {
        return noteDao.getNote()
     }
 
@@ -20,7 +20,7 @@ class NoteRepository (private val noteDao: NoteDao){
     }
 
 
-    fun getNoteById(id : Int): Flow<Note>{
+    fun getNoteById(id : Int): Flow<Note> {
         return noteDao.getNoteById(id)
     }
 }

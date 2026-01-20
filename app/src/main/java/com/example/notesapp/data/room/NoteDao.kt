@@ -1,4 +1,4 @@
-package com.example.notesapp.room
+package com.example.notesapp.data.room
 
 import androidx.room.Dao
 import androidx.room.Delete

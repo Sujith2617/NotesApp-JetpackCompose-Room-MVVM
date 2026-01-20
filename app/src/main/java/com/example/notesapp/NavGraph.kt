@@ -6,6 +6,10 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
+import com.example.notesapp.presentation.HomeScreen
+import com.example.notesapp.presentation.NotesInputScreen
+import com.example.notesapp.presentation.UpdateScreen
+import com.example.notesapp.viewModel.NoteViewModel
 
 
 @Composable
@@ -16,11 +20,11 @@ fun SetUpNavGraph(viewModel: NoteViewModel,){
     NavHost(navController= navController, startDestination = Screens.HomeScreen.routes) {
 
         composable(Screens.HomeScreen.routes){
-            HomeScreen(navController,viewModel)
+            HomeScreen(navController, viewModel)
         }
 
         composable(Screens.NotesInputScreen.routes){
-            NotesInputScreen(navController,viewModel)
+            NotesInputScreen(navController, viewModel)
         }
 
 
@@ -29,7 +33,7 @@ fun SetUpNavGraph(viewModel: NoteViewModel,){
         )){
             backStackEntry ->
             val id = backStackEntry.arguments?.getInt("id")
-            UpdateScreen(id,navController,viewModel)
+            UpdateScreen(id, navController, viewModel)
 
         }
 

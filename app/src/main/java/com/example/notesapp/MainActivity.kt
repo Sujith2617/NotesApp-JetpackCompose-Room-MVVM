@@ -5,7 +5,11 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import androidx.lifecycle.ViewModelProvider
-import com.example.notesapp.room.NoteDataBaseProvider
+import com.example.notesapp.data.room.NoteDataBaseProvider
+import com.example.notesapp.data.room.repository.NoteRepository
+import com.example.notesapp.viewModel.NoteViewModel
+import com.example.notesapp.viewModel.ViewModelFactory
+
 class MainActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
